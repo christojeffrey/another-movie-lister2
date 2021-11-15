@@ -42,30 +42,32 @@ function App() {
           setShowWishlist(false);
         }}
       />
-      {showWishlist ? (
-        <div>
-          <h1>wishlist</h1>
-          <button className="btn btn-primary" onClick={() => setShowWishlist(false)}>
-            back
-          </button>
-          {wishlist.map((element) => {
-            return <div>{element.Title}</div>;
-          })}
-        </div>
-      ) : ishome ? (
-        <BigSearch
-          insertquery={(thequery) => setquery(thequery)}
-          searchButtonClicked={() => {
-            setishome(false);
-            setLoading(true);
-            setShowWishlist(false);
-          }}
-        />
-      ) : loading ? (
-        <div>loading</div>
-      ) : (
-        <MovieContent moviedata={moviedata} wishlist={wishlist} setWishlist={setWishlist} />
-      )}
+      <div className="m-5">
+        {showWishlist ? (
+          <>
+            <h1>wishlist</h1>
+            <button className="btn btn-primary" onClick={() => setShowWishlist(false)}>
+              back
+            </button>
+            {wishlist.map((element) => {
+              return <div>{element.Title}</div>;
+            })}
+          </>
+        ) : ishome ? (
+          <BigSearch
+            insertquery={(thequery) => setquery(thequery)}
+            searchButtonClicked={() => {
+              setishome(false);
+              setLoading(true);
+              setShowWishlist(false);
+            }}
+          />
+        ) : loading ? (
+          <div>loading</div>
+        ) : (
+          <MovieContent moviedata={moviedata} wishlist={wishlist} setWishlist={setWishlist} />
+        )}
+      </div>
     </>
   );
 }

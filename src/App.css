@@ -1,5 +1,11 @@
 * {
-  /* border: 2px solid red; */
+  /* border: 1px solid red; */
+}
+.nav-item:hover {
+  color: blue;
+}
+body {
+  padding-top: 70px;
 }
 .App {
   text-align: center;
