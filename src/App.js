@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BsHeartFill, BsHeart } from "react-icons/bs";
+import { BsHeartFill } from "react-icons/bs";
 import "./App.css";
 
 import NavBar from "./NavBar";
@@ -13,7 +13,7 @@ function App() {
   const [wishlist, setWishlist] = useState([]);
   const [showWishlist, setShowWishlist] = useState(false);
 
-  async function getMovieList() {
+  async function getMovieList(query) {
     let url = "https://www.omdbapi.com/?apikey=8a501eb9&s=" + query;
     await fetch(url)
       .then((response) => {
@@ -26,7 +26,7 @@ function App() {
   }
   useEffect(() => {
     console.log("you search for", query);
-    getMovieList();
+    getMovieList(query);
   }, [query]);
   return (
     <>
@@ -54,7 +54,7 @@ function App() {
                 <div className="card w-50 m-5">
                   <div className="card-body d-flex w-75" key={idx}>
                     <div className="w-25">
-                      <img src={element.Poster} className=" rounded img-fluid" />
+                      <img src={element.Poster} className=" rounded img-fluid" alt="movie poster" />
                     </div>
                     <div className="px-4">
                       <h3>{element.Title}</h3>

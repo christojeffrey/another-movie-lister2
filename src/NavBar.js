@@ -27,9 +27,8 @@ const NavBar = (props) => {
                 <input className="form-control" placeholder={placeholder} type="text" value={queryword} onChange={(e) => setqueryword(e.target.value)}></input>
                 <div className="input-group-prepend">
                   <button
-                    type="button"
-                    className="btn"
                     type="submit"
+                    className="btn"
                     onClick={(e) => {
                       e.preventDefault();
                       if (queryword === "") {

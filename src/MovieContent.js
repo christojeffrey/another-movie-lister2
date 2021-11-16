@@ -48,7 +48,7 @@ const MovieContent = (props) => {
           </div>
           <div className="m-5">
             {console.log("movie detail ", movieDetail)}
-            <img src={movieDetail.Poster}></img>
+            <img src={movieDetail.Poster} alt="movie poster"></img>
             <h1>{movieDetail.Title}</h1>
             actors : {movieDetail.Actors} <br />
             award : {movieDetail.Awards}
@@ -88,7 +88,7 @@ const MovieContent = (props) => {
             <div className="card w-50 m-5">
               <div className="card-body d-flex w-75" key={idx} onClick={() => movieDetailContent(element.imdbID)}>
                 <div className="w-25">
-                  <img src={element.Poster} className=" rounded img-fluid" />
+                  <img src={element.Poster} alt="movie poster" className=" rounded img-fluid" />
                 </div>
                 <div className="px-4">
                   <h3>{element.Title}</h3>

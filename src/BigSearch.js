@@ -13,9 +13,8 @@ const BigSearch = (props) => {
             <input className="form-control-lg" placeholder={placeholder} type="text" value={queryword} onChange={(e) => setqueryword(e.target.value)}></input>
             <div className="input-group-prepend">
               <button
-                type="button"
-                className="btn btn-lg"
                 type="submit"
+                className="btn btn-lg"
                 onClick={(e) => {
                   e.preventDefault();
                   if (queryword === "") {
