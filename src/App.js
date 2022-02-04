@@ -10,11 +10,9 @@ function App() {
   const [query, setquery] = useState("");
   const [moviedata, setmoviedata] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [wishlist, setWishlist] = useState(JSON.parse(window.localStorage.getItem("wishlist")) || []);
+  const [wishlist, setWishlist] = useState([]);
   const [showWishlist, setShowWishlist] = useState(false);
-  useEffect(() => {
-    window.localStorage.setItem("wishlist", JSON.stringify(wishlist));
-  }, [wishlist]);
+
   async function getMovieList(query) {
     let url = "https://www.omdbapi.com/?apikey=8a501eb9&s=" + query;
     await fetch(url)

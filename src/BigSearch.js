@@ -32,9 +32,7 @@ const BigSearch = (props) => {
           </div>
         </form>
       </div>
-      <footer className="fixed-bottom m-4 text-center">
-        using react, bootstrap, omdbapi. <a href="https://github.com/christojeffrey/another-movie-lister2">github repo</a>{" "}
-      </footer>
+      <footer className="fixed-bottom m-4 text-center">using react, bootstrap, omdbapi, insert github repo</footer>
     </div>
   );
 };
